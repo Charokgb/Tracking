@@ -33,25 +33,60 @@ export default function Home() {
           </button>
         </div>
 
-        {/* ❌ ERROR MESSAGE */}
         {error && <p className="error">{error}</p>}
       </div>
 
-      {/* ✅ DIALOG BOX */}
+      {/* 🔥 DIALOG */}
       {showDialog && (
         <div className="dialogOverlay">
           <div className="dialog">
-            <h2>Shipment History</h2>
+            <h2 className="dialogTitle">Shipment History</h2>
 
-            <ul>
-              <li>📦 Package received – Lagos</li>
-              <li>🚚 In transit – Abuja</li>
-              <li>✈️ Departed facility – London</li>
-              <li>📍 Arrived at destination – New York</li>
-              <li>✅ Ready for delivery</li>
-            </ul>
+            <div className="timeline">
+              {/* STEP 1 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
 
-            <button onClick={() => setShowDialog(false)} className="closeBtn">
+                <div className="text">
+                  <h3>Label created by Sender</h3>
+                  <p>Shipping information registered by G4S Australia</p>
+                  <span>
+                    Spenser Park, WA • Mon 27 April, 12:33PM
+                  </span>
+                </div>
+              </div>
+
+              <div className="divider"></div>
+
+              {/* STEP 2 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
+
+                <div className="text">
+                  <h3>Receiver Signed Confidentiality Agreement</h3>
+                  <p>Signed: Fri 01 May, 8:12 am</p>
+                </div>
+              </div>
+
+              <div className="divider"></div>
+
+              {/* STEP 3 */}
+              <div className="step">
+                <div className="dot"></div>
+
+                <div className="text">
+                  <h3>Awaiting Shipping and clearance fees</h3>
+                  <p>Pending confirmation</p>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setShowDialog(false)}
+              className="closeBtn"
+            >
               Close
             </button>
           </div>
@@ -120,7 +155,7 @@ export default function Home() {
           color: #ff4d4d;
         }
 
-        /* 🔥 DIALOG STYLING */
+        /* DIALOG */
         .dialogOverlay {
           position: fixed;
           inset: 0;
@@ -135,27 +170,76 @@ export default function Home() {
           background: white;
           color: black;
           padding: 20px;
-          border-radius: 8px;
-          width: 300px;
-          text-align: left;
+          border-radius: 10px;
+          width: 320px;
         }
 
-        .dialog h2 {
-          margin-bottom: 10px;
+        .dialogTitle {
+          margin-bottom: 15px;
+          font-size: 18px;
         }
 
-        .dialog ul {
-          padding-left: 20px;
+        /* TIMELINE */
+        .timeline {
+          position: relative;
+        }
+
+        .step {
+          position: relative;
+          padding-left: 30px;
           margin-bottom: 15px;
         }
 
+        .dot {
+          width: 12px;
+          height: 12px;
+          background: white;
+          border: 2px solid #1e4db7;
+          border-radius: 50%;
+          position: absolute;
+          left: 0;
+          top: 5px;
+        }
+
+        .line {
+          position: absolute;
+          left: 5px;
+          top: 18px;
+          width: 2px;
+          height: 40px;
+          background: #1e4db7;
+        }
+
+        .text h3 {
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 4px;
+        }
+
+        .text p {
+          font-size: 13px;
+          margin: 0;
+        }
+
+        .text span {
+          font-size: 12px;
+          color: gray;
+        }
+
+        .divider {
+          height: 1px;
+          background: #eee;
+          margin: 10px 0;
+        }
+
         .closeBtn {
+          margin-top: 15px;
           padding: 8px 12px;
           border: none;
           background: #0a1f44;
           color: white;
           cursor: pointer;
-          border-radius: 4px;
+          border-radius: 5px;
         }
       `}</style>
     </div>

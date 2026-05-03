@@ -32,7 +32,7 @@ export default function Home() {
           align-items: center;
 
           /* ✅ FIXED IMAGE PATH */
-          background-image: url("/G4S_Västberga_2009.jpg");
+          background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
           background-size: cover;
           background-position: center;
         }

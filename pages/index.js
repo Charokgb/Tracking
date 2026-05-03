@@ -33,7 +33,7 @@ export default function Home() {
           align-items: center;
 
           /* Background image */
-          background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
+          background-image: url("public/g44s.png.webp");
           background-size: cover;
           background-position: center;
         }

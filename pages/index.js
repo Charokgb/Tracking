@@ -106,7 +106,7 @@ export default function Home() {
           content: "";
           position: absolute;
           inset: 0;
-          background-image: url("/G4S.jpg");
+          background-image: url("/g4s.png");
           background-size: cover;
           background-position: center;
           filter: blur(2px) brightness(0.6);

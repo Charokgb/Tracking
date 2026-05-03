@@ -10,7 +10,7 @@ export default function Home() {
       <div className="overlay"></div>
 
       <div className="content">
-        <h1 className="title">Shipment Tracker</h1>
+        <h1 className="title">G4S CONFIDENTIAL TRACKER</h1>
 
         <div className="searchBox">
           <input

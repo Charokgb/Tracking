@@ -31,32 +31,38 @@ export default function Home() {
           justify-content: center;
           align-items: center;
 
-          /* ✅ FIXED IMAGE PATH */
-          background-image: url("https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d");
+          /* ✅ YOUR IMAGE */
+          background-image: url("/G4S_Västberga_2009.jpg");
           background-size: cover;
           background-position: center;
+
+          /* ✅ BRIGHTNESS GOES HERE */
+          filter: brightness(1.1);
         }
 
+        /* ✅ OVERLAY (on top of image) */
         .overlay {
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
+
           background: linear-gradient(
             to bottom,
-            rgba(5, 20, 60, 0.85),
-            rgba(2, 10, 40, 0.95)
+            rgba(5, 20, 60, 0.55),
+            rgba(2, 10, 40, 0.75)
           );
+
           z-index: 1;
         }
 
+        /* ✅ CONTENT (above everything) */
         .content {
           position: relative;
           z-index: 2;
           color: white;
 
-          /* ✅ CENTER FIX */
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -69,7 +75,6 @@ export default function Home() {
           text-align: center;
         }
 
-        /* ✅ INPUT + BUTTON ROW */
         .searchBox {
           display: flex;
           width: 400px;

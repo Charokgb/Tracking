@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 
 export default function Home() {
@@ -20,6 +18,7 @@ export default function Home() {
             placeholder="Track shipment"
             className="input"
           />
+          <button className="button">Track</button>
         </div>
       </div>
 
@@ -32,13 +31,12 @@ export default function Home() {
           justify-content: center;
           align-items: center;
 
-          /* Background image */
-          background-image: url("public/g44s.png.webp");
+          /* ✅ FIXED IMAGE PATH */
+          background-image: url("/g44s.png.webp");
           background-size: cover;
           background-position: center;
         }
 
-        /* Dark blue gradient overlay */
         .overlay {
           position: absolute;
           top: 0;
@@ -56,29 +54,36 @@ export default function Home() {
         .content {
           position: relative;
           z-index: 2;
-          text-align: center;
           color: white;
+
+          /* ✅ CENTER FIX */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .title {
           font-size: 2.5rem;
           margin-bottom: 20px;
           letter-spacing: 1px;
+          text-align: center;
         }
 
+        /* ✅ INPUT + BUTTON ROW */
         .searchBox {
-          width: 320px;
+          display: flex;
+          width: 400px;
+          border-radius: 8px;
+          overflow: hidden;
         }
 
         .input {
-          width: 100%;
+          flex: 1;
           padding: 15px;
-          border-radius: 8px;
           border: none;
           outline: none;
           font-size: 16px;
 
-          /* glass effect */
           background: rgba(255, 255, 255, 0.1);
           color: white;
           backdrop-filter: blur(8px);
@@ -88,8 +93,18 @@ export default function Home() {
           color: rgba(255, 255, 255, 0.6);
         }
 
-        .input:focus::placeholder {
-          opacity: 0.3;
+        .button {
+          padding: 15px 20px;
+          background: #0a1f44;
+          color: white;
+          border: none;
+          cursor: pointer;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .button:hover {
+          background: #163a7a;
         }
       `}</style>
     </div>

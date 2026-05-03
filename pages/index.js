@@ -21,35 +21,41 @@ export default function Home() {
       </div>
 
       <style jsx>{`
+        /* MAIN CONTAINER */
         .container {
+          position: relative;
           height: 100vh;
           width: 100%;
-          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;
-
-          /* ✅ IMAGE ONLY */
-          background-image: url("/G4S_Västberga_2009.jpg");
-          background-size: cover;
-          background-position: center;
-
-          /* ✅ BLUR EFFECT */
-          filter: blur(4px);
+          overflow: hidden;
         }
 
-        /* ⚠️ IMPORTANT: keep content clear */
-        .content {
+        /* 🔥 BACKGROUND IMAGE WITH BLUR */
+        .container::before {
+          content: "";
           position: absolute;
+          inset: 0;
+
+          background: url("/G4S_Västberga_2009.jpg") no-repeat center center;
+          background-size: cover;
+
+          filter: blur(5px) brightness(0.7);
+          transform: scale(1.1); /* prevents blur edges */
+
+          z-index: 0;
+        }
+
+        /* CONTENT ON TOP */
+        .content {
+          position: relative;
           z-index: 2;
           color: white;
 
           display: flex;
           flex-direction: column;
           align-items: center;
-
-          /* Remove blur from content */
-          filter: none;
         }
 
         .title {
@@ -59,9 +65,10 @@ export default function Home() {
           text-align: center;
         }
 
+        /* SEARCH BAR */
         .searchBox {
           display: flex;
-          width: 400px;
+          width: 420px;
           border-radius: 8px;
           overflow: hidden;
         }
@@ -73,7 +80,7 @@ export default function Home() {
           outline: none;
           font-size: 16px;
 
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 0.6);
           color: white;
         }
 
@@ -88,6 +95,7 @@ export default function Home() {
           border: none;
           cursor: pointer;
           font-weight: bold;
+          transition: 0.3s;
         }
 
         .button:hover {

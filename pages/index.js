@@ -38,7 +38,7 @@ export default function Home() {
           position: absolute;
           inset: 0;
 
-          background: url("/G4S_Västberga_2009.jpg") no-repeat center center;
+          background: url("/G4S.jpg") no-repeat center center;
           background-size: cover;
 
           filter: blur(5px) brightness(0.7);

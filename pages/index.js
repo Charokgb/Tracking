@@ -5,8 +5,6 @@ export default function Home() {
 
   return (
     <div className="container">
-      <div className="overlay"></div>
-
       <div className="content">
         <h1 className="title">G4S CONFIDENTIAL TRACKER</h1>
 
@@ -31,41 +29,27 @@ export default function Home() {
           justify-content: center;
           align-items: center;
 
-          /* ✅ YOUR IMAGE */
+          /* ✅ IMAGE ONLY */
           background-image: url("/G4S_Västberga_2009.jpg");
           background-size: cover;
           background-position: center;
 
-          /* ✅ BRIGHTNESS GOES HERE */
-          filter: brightness(1.1);
+          /* ✅ BLUR EFFECT */
+          filter: blur(4px);
         }
 
-        /* ✅ OVERLAY (on top of image) */
-        .overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-
-          background: linear-gradient(
-            to bottom,
-            rgba(5, 20, 60, 0.55),
-            rgba(2, 10, 40, 0.75)
-          );
-
-          z-index: 1;
-        }
-
-        /* ✅ CONTENT (above everything) */
+        /* ⚠️ IMPORTANT: keep content clear */
         .content {
-          position: relative;
+          position: absolute;
           z-index: 2;
           color: white;
 
           display: flex;
           flex-direction: column;
           align-items: center;
+
+          /* Remove blur from content */
+          filter: none;
         }
 
         .title {
@@ -89,13 +73,12 @@ export default function Home() {
           outline: none;
           font-size: 16px;
 
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(0, 0, 0, 0.5);
           color: white;
-          backdrop-filter: blur(8px);
         }
 
         .input::placeholder {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.7);
         }
 
         .button {
@@ -105,7 +88,6 @@ export default function Home() {
           border: none;
           cursor: pointer;
           font-weight: bold;
-          transition: 0.3s;
         }
 
         .button:hover {

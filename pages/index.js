@@ -2,6 +2,18 @@ import { useState } from "react";
 
 export default function Home() {
   const [tracking, setTracking] = useState("");
+  const [showDialog, setShowDialog] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleTrack = () => {
+    if (tracking === "AU1304462U09") {
+      setError("");
+      setShowDialog(true);
+    } else {
+      setShowDialog(false);
+      setError("Shipment not found");
+    }
+  };
 
   return (
     <div className="container">
@@ -16,43 +28,61 @@ export default function Home() {
             placeholder="Track shipment"
             className="input"
           />
-          <button className="button">Track</button>
+          <button className="button" onClick={handleTrack}>
+            Track
+          </button>
         </div>
+
+        {/* ❌ ERROR MESSAGE */}
+        {error && <p className="error">{error}</p>}
       </div>
+
+      {/* ✅ DIALOG BOX */}
+      {showDialog && (
+        <div className="dialogOverlay">
+          <div className="dialog">
+            <h2>Shipment History</h2>
+
+            <ul>
+              <li>📦 Package received – Lagos</li>
+              <li>🚚 In transit – Abuja</li>
+              <li>✈️ Departed facility – London</li>
+              <li>📍 Arrived at destination – New York</li>
+              <li>✅ Ready for delivery</li>
+            </ul>
+
+            <button onClick={() => setShowDialog(false)} className="closeBtn">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         .container {
           position: relative;
           height: 100vh;
-          width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
-          overflow: hidden;
         }
 
         .container::before {
           content: "";
           position: absolute;
           inset: 0;
-
           background-image: url("/G4S.jpg");
-          background-repeat: no-repeat;
-          background-position: center;
           background-size: cover;
-
+          background-position: center;
           filter: blur(2px) brightness(0.6);
-          transform: scale(1.05);
-
           z-index: 0;
         }
 
         .content {
           position: relative;
           z-index: 2;
-          color: white;
           text-align: center;
-          padding: 20px;
+          color: white;
         }
 
         .title {
@@ -62,11 +92,10 @@ export default function Home() {
 
         .searchBox {
           display: flex;
-          width: 100%;
           max-width: 350px;
           margin: 0 auto;
-          border-radius: 6px;
           overflow: hidden;
+          border-radius: 6px;
         }
 
         .input {
@@ -84,6 +113,49 @@ export default function Home() {
           color: white;
           border: none;
           cursor: pointer;
+        }
+
+        .error {
+          margin-top: 10px;
+          color: #ff4d4d;
+        }
+
+        /* 🔥 DIALOG STYLING */
+        .dialogOverlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 10;
+        }
+
+        .dialog {
+          background: white;
+          color: black;
+          padding: 20px;
+          border-radius: 8px;
+          width: 300px;
+          text-align: left;
+        }
+
+        .dialog h2 {
+          margin-bottom: 10px;
+        }
+
+        .dialog ul {
+          padding-left: 20px;
+          margin-bottom: 15px;
+        }
+
+        .closeBtn {
+          padding: 8px 12px;
+          border: none;
+          background: #0a1f44;
+          color: white;
+          cursor: pointer;
+          border-radius: 4px;
         }
       `}</style>
     </div>

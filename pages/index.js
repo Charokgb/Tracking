@@ -75,10 +75,24 @@ export default function Home() {
               {/* STEP 3 */}
               <div className="step">
                 <div className="dot"></div>
+                <div className="line"></div>
 
                 <div className="text">
                   <h3>Awaiting Shipping and clearance fees</h3>
                   <p>Pending confirmation</p>
+                </div>
+              </div>
+
+              <div className="divider"></div>
+
+              {/* STEP 4 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
+
+                <div className="text">
+                  <h3>Shipping and clearance fees paid</h3>
+                  <p>Signed: Thur 16 July, 10:02 am</p>
                 </div>
               </div>
             </div>

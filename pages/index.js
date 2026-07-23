@@ -95,6 +95,32 @@ export default function Home() {
                   <p>Signed: Thur 16 July, 10:02 am</p>
                 </div>
               </div>
+
+                <div className="divider"></div>
+
+              {/* STEP 5 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
+
+                <div className="text">
+                  <h3>Shipment left sorting hub to Australia </h3>
+                  <p>Signed: Mon 20 July, 10:12 am</p>
+                </div>
+              </div>
+
+                <div className="divider"></div>
+
+              {/* STEP 6 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
+
+                <div className="text">
+                  <h3>In transit</h3>
+                  <p>Signed: Thur 23 July, 8:41 am</p>
+                </div>
+              </div>
             </div>
 
             <button

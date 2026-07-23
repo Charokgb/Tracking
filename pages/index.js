@@ -117,7 +117,7 @@ export default function Home() {
                 <div className="line"></div>
 
                 <div className="text">
-                  <h3>In transit</h3>
+                  <h3>In Transit</h3>
                   <p>Signed: Thur 23 July, 8:41 am</p>
                 </div>
               </div>

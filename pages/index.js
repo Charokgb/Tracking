@@ -124,7 +124,7 @@ export default function Home() {
 
                 <div className="divider"></div>
 
-              {/* STEP 6 */}
+              {/* STEP 7 */}
               <div className="step">
                 <div className="dot"></div>
                 <div className="line"></div>

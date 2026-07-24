@@ -121,6 +121,19 @@ export default function Home() {
                   <p>Signed: Thur 23 July, 8:41 am</p>
                 </div>
               </div>
+
+                <div className="divider"></div>
+
+              {/* STEP 6 */}
+              <div className="step">
+                <div className="dot"></div>
+                <div className="line"></div>
+
+                <div className="text">
+                  <h3>Shipment currently going through custom clearance, Melbourne AU</h3>
+                  <p>Signed: Fri 24 July, 10:33 am</p>
+                </div>
+              </div>
             </div>
 
             <button
